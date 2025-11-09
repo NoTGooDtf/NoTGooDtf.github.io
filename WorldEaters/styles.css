@@ -1,0 +1,80 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 2em;
+  background: #fafafa;
+  color: #333;
+}
+button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: #0066ff;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #004fcc;
+}
+#phaseTab {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+#phaseTab button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #eee;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+#phaseTab button.active {
+  background-color: #0066ff;
+  color: white;
+}
+.tabContent {
+  display: none;
+  margin-top: 20px;
+}
+
+button.activeTab {
+  background: #0066ff;
+  color: white;
+}
+
+ul.alternate li:nth-child(odd) {
+  background-color: #f15a5a;
+  color: #000000;
+}
+
+ul.alternate li:nth-child(even) {
+  background-color: #fdd16c;
+  color: #000000;
+}
+
+ul.alternate li {
+  padding: 8px;
+  border-bottom: 1px solid #771d1d;
+}
+
+.detContent {
+  display: none;
+  margin-top: 15px;
+}
+
+#detachmentTabs button.activeDet {
+  background: #8b0a0a; 
+  color: white;
+}
+
+.unitContent {
+  display: none;
+  margin-top: 15px;
+}
+
+#unitTabs button.activeUnit {
+  background: #8b0a0a; 
+  color: white;
+}
