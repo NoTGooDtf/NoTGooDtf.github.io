@@ -78,3 +78,10 @@ ul.alternate li {
   background: #8b0a0a; 
   color: white;
 }
+
+.unitCard {
+  border: 1px solid #900;
+  padding: 8px;
+  margin: 6px 0;
+  border-radius: 4px;
+}

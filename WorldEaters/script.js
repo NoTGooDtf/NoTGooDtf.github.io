@@ -74,3 +74,34 @@ if (unitButtons.length > 0) {
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/service-worker.js");
 }
+
+// Get units.json
+async function loadUnits() {
+  const res = await fetch('units.json');
+  const data = await res.json();
+  return data;
+}
+
+// For loop the json
+function renderUnits(category, data) {
+  const container = document.getElementById(`${category}Content`);
+  container.innerHTML = `<h3>${category}</h3>`;
+
+  data[category].forEach(unit => {
+    const el = document.createElement('div');
+    el.className = "unitCard";
+    el.innerHTML = `
+      <h4>${unit.name}</h4>
+      <p>Move: ${unit.movement} | Save: ${unit.save} | Wounds: ${unit.wounds}</p>
+      <p>Abilities:</p>
+      <ul>${unit.abilities.map(a => `<li>${a}</li>`).join("")}</ul>
+    `;
+    container.appendChild(el);
+  });
+}
+
+loadUnits().then(data => {
+  renderUnits("character", data);
+  renderUnits("infantry", data);
+  renderUnits("vehicles", data);
+});
